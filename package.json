@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "clsx": "^1.2.1",
     "react": "^18.2.0",
     "typescript": "^4.7.4"
   },
