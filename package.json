@@ -9,6 +9,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azabraao/react-draggable-bottom-sheet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azabraao/react-draggable-bottom-sheet/issues"
+  },
+  "homepage": "https://github.com/azabraao/react-draggable-bottom-sheet",
   "keywords": [
     "react",
     "draggable",
