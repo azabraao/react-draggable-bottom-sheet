@@ -1,0 +1,23 @@
+{
+  "name": "react-draggable-bottom-sheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "files": [
+    "src/**/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/react": "^18.0.15"
+  }
+}
