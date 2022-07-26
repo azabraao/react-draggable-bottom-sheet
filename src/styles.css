@@ -1,0 +1,83 @@
+.BottomSheet {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  transition-property: opacity;
+  justify-content: center;
+  align-items: flex-end;
+  color: #0f0e17;
+}
+
+.BottomSheet--open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.BottomSheet--closed {
+  transition-delay: 300ms;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.BottomSheet__backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  transition-property: opacity;
+  transition-duration: 500ms;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.BottomSheet--open .BottomSheet__backdrop {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.BottomSheet__draggable {
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  max-width: 72rem;
+}
+
+.BottomSheet__main {
+  display: flex;
+  position: relative;
+  z-index: 40;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  flex-direction: column;
+  max-height: 100vh;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.BottomSheet__drag-indicator-wrap {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.BottomSheet__drag-indicator {
+  width: 2.5rem;
+  height: 2px;
+}
+
+.BottomSheet__window {
+  overflow-y: auto;
+}
+
+.BottomSheet__window::-webkit-scrollbar {
+  display: none;
+}

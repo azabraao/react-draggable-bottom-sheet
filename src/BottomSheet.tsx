@@ -5,14 +5,47 @@ import { useCallbackRef } from "use-callback-ref";
 
 import { lockBodyScroll, unlockBodyScroll } from "./utils";
 import Backdrop from "./Backdrop";
+import DragIndicator from "./DragIndicator";
 
 interface BottomSheetProps {
   children: React.ReactNode;
   close: VoidFunction;
   isOpen: boolean;
+  theme?: {
+    dragIndicator: {
+      backgroundColor: string;
+      width: number;
+      height: number;
+    };
+    backdrop: {
+      backgroundColor: string;
+    };
+    window: {
+      backgroundColor: string;
+      borderRadius: number;
+    };
+  };
 }
 
-const BottomSheet = ({ children, isOpen, close }: BottomSheetProps) => {
+const BottomSheet = ({
+  children,
+  isOpen,
+  close,
+  theme = {
+    dragIndicator: {
+      backgroundColor: "#0F0E17",
+      width: 40,
+      height: 2,
+    },
+    backdrop: {
+      backgroundColor: "rgba(15, 14, 23, 0.5)",
+    },
+    window: {
+      backgroundColor: "#ffffff",
+      borderRadius: 4,
+    },
+  },
+}: BottomSheetProps) => {
   const [rect, setRect] = useState<DOMRect>();
   const ref = useCallbackRef(null, (ref: HTMLDivElement | null) => {
     setRect(ref?.getBoundingClientRect());
@@ -53,34 +86,35 @@ const BottomSheet = ({ children, isOpen, close }: BottomSheetProps) => {
   return (
     <div
       className={clsx(
-        "fixed top-0 right-0 bottom-0 left-0 flex items-end justify-center z-20 transition-opacity",
-        isOpen
-          ? "pointer-events-auto opacity-100"
-          : "pointer-events-none opacity-0 delay-300"
+        "BottomSheet",
+        isOpen ? "BottomSheet--open" : "BottomSheet--closed"
       )}
     >
-      <Backdrop isActive={isOpen} onClick={close} transitionDuration={500} />
+      <Backdrop
+        onClick={close}
+        backgroundColor={theme.backdrop.backgroundColor}
+      />
       <Draggable
         axis="y"
         bounds={{
           top: 0,
         }}
         position={position}
-        defaultClassName={clsx(
-          "w-full max-w-6xl transition-transform duration-300 ease-in-out"
-        )}
+        defaultClassName={clsx("BottomSheet__draggable")}
         onStop={handleStopDragging}
         onDrag={onDragging}
         nodeRef={ref}
       >
         <div
           ref={ref}
-          className="relative z-40 bg-white rounded-t-2xl pl-4 pr-4 max-h-screen flex flex-col"
+          className="BottomSheet__main"
+          style={{
+            backgroundColor: theme.window.backgroundColor,
+            borderRadius: theme.window.borderRadius,
+          }}
         >
-          <div className="flex justify-center items-center pt-4 pb-4">
-            <div className="w-10 h-[2px] bg-black-40" />
-          </div>
-          <div className="overflow-y-auto scrollbar-none">{children}</div>
+          <DragIndicator styles={theme.dragIndicator} />
+          <div className="BottomSheet__window">{children}</div>
         </div>
       </Draggable>
     </div>
