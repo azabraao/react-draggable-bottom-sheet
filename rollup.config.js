@@ -1,20 +1,32 @@
-import css from "rollup-plugin-import-css";
+import postcss from "rollup-plugin-postcss";
 
 import typescript from "rollup-plugin-typescript2";
 
 import pkg from "./package.json";
 
 export default {
-  input: "src/index.tsx",
+  input: "src/index.ts",
   output: [
     {
       file: pkg.main,
-      format: "cjs",
+      format: "esm",
       exports: "named",
       sourcemap: true,
       strict: false,
+      css: true,
     },
   ],
-  plugins: [css(), typescript({ objectHashIgnoreUnknownHack: true })],
-  external: ["react", "react-dom"],
+  plugins: [
+    postcss({
+      inject: true,
+    }),
+    typescript(),
+  ],
+  external: [
+    "react",
+    "react-dom",
+    "@azabraao/react-draggable",
+    "clsx",
+    "use-callback-ref",
+  ],
 };

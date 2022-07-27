@@ -7,6 +7,8 @@ import { lockBodyScroll, unlockBodyScroll } from "./utils";
 import Backdrop from "./Backdrop";
 import DragIndicator from "./DragIndicator";
 
+import "./styles.css";
+
 interface BottomSheetProps {
   children: React.ReactNode;
   close: VoidFunction;
