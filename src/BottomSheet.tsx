@@ -22,7 +22,7 @@ interface BottomSheetProps {
     };
     window: {
       backgroundColor: string;
-      borderRadius: number;
+      borderRadius: string;
     };
   };
 }
@@ -42,7 +42,7 @@ const BottomSheet = ({
     },
     window: {
       backgroundColor: "#ffffff",
-      borderRadius: 4,
+      borderRadius: "8px 8px 0 0",
     },
   },
 }: BottomSheetProps) => {
