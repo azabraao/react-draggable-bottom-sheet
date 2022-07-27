@@ -1,5 +1,4 @@
-import clsx from "clsx";
-import { memo } from "react";
+import React, { memo } from "react";
 
 interface BackdropProps {
   backgroundColor?: string;

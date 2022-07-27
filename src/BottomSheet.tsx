@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
 import Draggable from "@azabraao/react-draggable";
 import clsx from "clsx";
 import { useCallbackRef } from "use-callback-ref";
