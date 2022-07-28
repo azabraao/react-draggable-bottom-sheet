@@ -2,7 +2,7 @@
 
 A React component with the bottom sheet experience we have for native mobile applications, but for web ✨
 
-## Instalation
+## Installation
 
 ```bash
 npm install react-draggable-bottom-sheet
