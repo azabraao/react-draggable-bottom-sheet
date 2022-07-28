@@ -56,5 +56,9 @@
     "branches": [
       "main"
     ]
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
   }
 }
