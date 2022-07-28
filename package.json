@@ -25,7 +25,7 @@
     "bottom",
     "sheet"
   ],
-  "author": "",
+  "author": "azabraao",
   "license": "ISC",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
