@@ -6,9 +6,9 @@ import { useCallbackRef } from "use-callback-ref";
 import { lockBodyScroll, unlockBodyScroll } from "./utils";
 import Backdrop from "./Backdrop";
 import DragIndicator from "./DragIndicator";
+import useIsDesktop from "./hooks/useIsDesktop";
 
 import "./styles.css";
-import useIsDesktop from "./hooks/useIsDesktop";
 
 interface BottomSheetProps {
   children: React.ReactNode;
