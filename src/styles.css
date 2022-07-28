@@ -12,6 +12,22 @@
   color: #0f0e17;
 }
 
+.BottomSheet--modalOnDesktop {
+  align-items: center;
+}
+
+.BottomSheet--modalOnDesktop .BottomSheet__draggable {
+  pointer-events: none;
+}
+
+.BottomSheet--modalOnDesktop .BottomSheet__window {
+  pointer-events: all;
+}
+
+.BottomSheet--modalOnDesktop .BottomSheet__window-wrap {
+  padding: 1rem;
+}
+
 .BottomSheet--open {
   pointer-events: auto;
   opacity: 1;
@@ -39,6 +55,8 @@
 .BottomSheet--open .BottomSheet__backdrop {
   pointer-events: auto;
   opacity: 1;
+  background-color: #000;
+  opacity: 0.7;
 }
 
 .BottomSheet__draggable {
@@ -49,7 +67,7 @@
   max-width: 72rem;
 }
 
-.BottomSheet__main {
+.BottomSheet__window-wrap {
   display: flex;
   position: relative;
   z-index: 40;
@@ -57,8 +75,7 @@
   padding-left: 1rem;
   flex-direction: column;
   max-height: 100vh;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  background-color: #fff;
 }
 
 .BottomSheet__drag-indicator-wrap {
@@ -72,6 +89,7 @@
 .BottomSheet__drag-indicator {
   width: 2.5rem;
   height: 2px;
+  background-color: #0f0e17;
 }
 
 .BottomSheet__window {

@@ -8,23 +8,38 @@ import Backdrop from "./Backdrop";
 import DragIndicator from "./DragIndicator";
 
 import "./styles.css";
+import useIsDesktop from "./hooks/useIsDesktop";
 
 interface BottomSheetProps {
   children: React.ReactNode;
   close: VoidFunction;
   isOpen: boolean;
-  theme?: {
-    dragIndicator: {
-      backgroundColor: string;
-      width: number;
-      height: number;
+  modalOnDesktop?: boolean;
+  desktopBreakpoint?: number;
+  classNames?: {
+    bottomSheet?: string;
+    backdrop?: string;
+    draggable?: string;
+    window?: {
+      wrap?: string;
+      content?: string;
     };
-    backdrop: {
-      backgroundColor: string;
+    dragIndicator?: {
+      wrap?: string;
+      indicator?: string;
     };
-    window: {
-      backgroundColor: string;
-      borderRadius: string;
+  };
+  styles?: {
+    bottomSheet?: React.CSSProperties;
+    backdrop?: React.CSSProperties;
+    draggable?: React.CSSProperties;
+    window?: {
+      wrap?: React.CSSProperties;
+      content?: React.CSSProperties;
+    };
+    dragIndicator?: {
+      wrap?: React.CSSProperties;
+      indicator?: React.CSSProperties;
     };
   };
 }
@@ -33,21 +48,24 @@ const BottomSheet = ({
   children,
   isOpen,
   close,
-  theme = {
-    dragIndicator: {
-      backgroundColor: "#0F0E17",
-      width: 40,
-      height: 2,
-    },
-    backdrop: {
-      backgroundColor: "rgba(15, 14, 23, 0.5)",
-    },
+  modalOnDesktop = false,
+  desktopBreakpoint = 1024,
+  styles = {},
+  classNames = {
+    bottomSheet: "",
+    backdrop: "",
+    draggable: "",
     window: {
-      backgroundColor: "#ffffff",
-      borderRadius: "8px 8px 0 0",
+      wrap: "",
+      content: "",
+    },
+    dragIndicator: {
+      wrap: "",
+      indicator: "",
     },
   },
 }: BottomSheetProps) => {
+  const isDesktop = useIsDesktop(desktopBreakpoint);
   const [rect, setRect] = useState<DOMRect>();
   const ref = useCallbackRef(null, (ref: HTMLDivElement | null) => {
     setRect(ref?.getBoundingClientRect());
@@ -79,6 +97,7 @@ const BottomSheet = ({
   );
 
   const position = useMemo(() => {
+    // if(isDesktop && modalOnDesktop) return {x:0,y:0}
     return {
       x: 0,
       y: isOpen ? 0 : rect?.height || 10000,
@@ -89,34 +108,44 @@ const BottomSheet = ({
     <div
       className={clsx(
         "BottomSheet",
-        isOpen ? "BottomSheet--open" : "BottomSheet--closed"
+        isOpen ? "BottomSheet--open" : "BottomSheet--closed",
+        modalOnDesktop && isDesktop && "BottomSheet--modalOnDesktop",
+        classNames.bottomSheet
       )}
     >
       <Backdrop
         onClick={close}
-        backgroundColor={theme.backdrop.backgroundColor}
+        className={classNames.backdrop}
+        style={styles.backdrop}
       />
       <Draggable
         axis="y"
         bounds={{
           top: 0,
+          ...(isDesktop && modalOnDesktop && { bottom: 0 }),
         }}
         position={position}
-        defaultClassName={clsx("BottomSheet__draggable")}
+        defaultClassName={clsx("BottomSheet__draggable", classNames.draggable)}
         onStop={handleStopDragging}
         onDrag={onDragging}
         nodeRef={ref}
       >
         <div
           ref={ref}
-          className="BottomSheet__main"
-          style={{
-            backgroundColor: theme.window.backgroundColor,
-            borderRadius: theme.window.borderRadius,
-          }}
+          className={clsx("BottomSheet__window-wrap", classNames.window?.wrap)}
+          style={styles.window?.wrap}
         >
-          <DragIndicator styles={theme.dragIndicator} />
-          <div className="BottomSheet__window">{children}</div>
+          {!modalOnDesktop && !isDesktop && (
+            <DragIndicator
+              className={classNames?.dragIndicator}
+              style={styles.dragIndicator}
+            />
+          )}
+          <div
+            className={clsx("BottomSheet__window", classNames.window?.content)}
+          >
+            {children}
+          </div>
         </div>
       </Draggable>
     </div>

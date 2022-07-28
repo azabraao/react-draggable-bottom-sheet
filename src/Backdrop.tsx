@@ -1,23 +1,19 @@
+import clsx from "clsx";
 import React, { memo } from "react";
 
 interface BackdropProps {
-  backgroundColor?: string;
+  style?: React.CSSProperties;
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  className?: string;
 }
 
-const Backdrop = ({ backgroundColor, onClick }: BackdropProps) => (
+const Backdrop = ({ onClick, style = {}, className = "" }: BackdropProps) => (
   <div
     onClick={onClick}
     data-testid="backdrop"
-    className={"BottomSheet__backdrop"}
-    style={{
-      backgroundColor: backgroundColor,
-    }}
+    className={clsx("BottomSheet__backdrop", className)}
+    style={style}
   />
 );
-
-Backdrop.defaultProps = {
-  backgroundColor: "",
-};
 
 export default memo(Backdrop);
