@@ -37,8 +37,6 @@ jobs:
         if: startsWith(github.event.head_commit.message, 'fix')
         run: |
           npm version patch
-            npm version patch 
-          npm version patch
           git push
           echo 'job finished'
 
