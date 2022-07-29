@@ -25,13 +25,13 @@ jobs:
           npx semantic-release
 
       - name: Package Version Patch
-        if: startsWith(github.event.head_commit.message, 'fix(')
+        if: startsWith(git log -1 --pretty=format:%s, 'fix(')
           run: |
             npm version patch 
             git push
 
       - name: Package Version Minor
-        if: startsWith(github.event.head_commit.message, 'feat(')
+        if: startsWith(git log -1 --pretty=format:%s, 'feat(')
           run: |
             npm version minor
             git push
