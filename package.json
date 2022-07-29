@@ -50,14 +50,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "use-callback-ref": "^1.3.0"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
   }
 }
