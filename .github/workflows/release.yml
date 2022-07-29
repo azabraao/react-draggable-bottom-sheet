@@ -16,10 +16,6 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: npm ci
-      - name: version & publish
-        uses: geeman201/conventional-changelog-npm-publish/@v14
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
