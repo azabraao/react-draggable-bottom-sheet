@@ -23,3 +23,15 @@ jobs:
         run: |
           npm run build
           npx semantic-release
+
+      - name: Package Version Patch
+        if: ${{ startsWith(github.event.head_commit.message, 'fix(') }}
+          run: |
+            npm version patch 
+            git push
+
+      - name: Package Version Minor
+        if: ${{ startsWith(github.event.head_commit.message, 'feat(') }}
+          run: |
+            npm version minor
+            git push
