@@ -21,9 +21,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm version
           npm run build
           npx semantic-release
+          git push
       # - name: test
       #   run: echo ${{ secrets }}
 
