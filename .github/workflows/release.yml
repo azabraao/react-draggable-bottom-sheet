@@ -23,7 +23,8 @@ jobs:
         run: |
           npm run build
           npx semantic-release
-      - name: Package Version Patch
+
+        # - name: Package Version Patch
         # if: startsWith(git log -1 --pretty=format:%s, 'fix(')
         # if: ${{ startsWith('Hello world', 'He') }}
         # if: ${{ startsWith('git log -1 --pretty=format:%s', 'fix') }}
@@ -34,11 +35,17 @@ jobs:
 
         # if: startsWith(github.event.head_commit.message == ''
         # if: startsWith(github.event.head_commit.message, '')
-        if: startsWith(github.event.head_commit.message, 'fix')
-        run: |
-          npm version patch
-          git push
-          echo 'job finished'
+
+        # if: startsWith(github.event.head_commit.message, 'fix')
+        # run: |
+        #   npm version patch
+        #   git push
+        #   echo 'job finished'
+
+        - name: version & publish
+          uses: geeman201/conventional-changelog-npm-publish/@v14
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Package Version Minor
       #   if: startsWith(git log -1 --pretty=format:%s, 'feat(')
