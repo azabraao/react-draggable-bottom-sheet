@@ -23,15 +23,28 @@ jobs:
         run: |
           npm run build
           npx semantic-release
-
       - name: Package Version Patch
-        if: startsWith(git log -1 --pretty=format:%s, 'fix(')
-          run: |
-            npm version patch 
-            git push
+        # if: startsWith(git log -1 --pretty=format:%s, 'fix(')
+        # if: ${{ startsWith('Hello world', 'He') }}
+        # if: ${{ startsWith('git log -1 --pretty=format:%s', 'fix') }}
+        # if: github.repository == 'azabraao/react-draggable-bottom-sheet'
 
-      - name: Package Version Minor
-        if: startsWith(git log -1 --pretty=format:%s, 'feat(')
-          run: |
-            npm version minor
-            git push
+        # if: github.repository == 'azabraao/react-draggable-bottom-sheet'
+        # run: echo ${{ github.event.head_commit.message }}
+
+        # if: startsWith(github.event.head_commit.message == ''
+        # if: startsWith(github.event.head_commit.message, '')
+        if: startsWith(github.event.head_commit.message, 'fix')
+        run: |
+          npm version patch
+            npm version patch 
+          npm version patch
+          git push
+          echo 'job finished'
+
+      # - name: Package Version Minor
+      #   if: startsWith(git log -1 --pretty=format:%s, 'feat(')
+      #     run: |
+      #       npm version minor
+      #       git push
+  #         npx semantic-release
