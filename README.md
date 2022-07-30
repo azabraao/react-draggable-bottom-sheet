@@ -2,6 +2,8 @@
 
 A React component with the bottom sheet experience we have for native mobile applications, but for web ✨
 
+[Demo](https://codesandbox.io/s/react-draggable-bottom-sheet-mo1f7z)
+
 ## Installation
 
 ```bash
