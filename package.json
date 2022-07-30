@@ -1,6 +1,6 @@
 {
   "name": "react-draggable-bottom-sheet",
-  "version": "1.7.6",
+  "version": "1.7.7",
   "description": "A React component with the bottom sheet experience we have for native mobile applications, but for web ✨",
   "main": "dist/index.js",
   "files": [
