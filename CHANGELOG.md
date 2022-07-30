@@ -1,3 +1,5 @@
+## [1.7.6](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.5...v1.7.6) (2022-07-30)
+
 ## [1.7.5](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.4...v1.7.5) (2022-07-29)
 
 
