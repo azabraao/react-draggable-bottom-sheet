@@ -1,3 +1,10 @@
+## [1.7.9](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.8...v1.7.9) (2022-08-08)
+
+
+### Bug Fixes
+
+* **BottomSheet:** add missing inline style ([615fe02](https://github.com/azabraao/react-draggable-bottom-sheet/commit/615fe027719194b1ab6e32a4e199bb0af12fd6dc))
+
 ## [1.7.8](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.7...v1.7.8) (2022-08-06)
 
 ## [1.7.7](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.6...v1.7.7) (2022-07-30)
