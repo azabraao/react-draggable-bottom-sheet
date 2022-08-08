@@ -97,7 +97,6 @@ const BottomSheet = ({
   );
 
   const position = useMemo(() => {
-    // if(isDesktop && modalOnDesktop) return {x:0,y:0}
     return {
       x: 0,
       y: isOpen ? 0 : rect?.height || 10000,
@@ -112,6 +111,7 @@ const BottomSheet = ({
         modalOnDesktop && isDesktop && "BottomSheet--modalOnDesktop",
         classNames.bottomSheet
       )}
+      style={styles.bottomSheet}
     >
       <Backdrop
         onClick={close}
