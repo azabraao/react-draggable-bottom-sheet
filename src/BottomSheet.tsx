@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import Draggable from "@azabraao/react-draggable";
 import clsx from "clsx";
 import { useCallbackRef } from "use-callback-ref";
@@ -43,6 +44,12 @@ interface BottomSheetProps {
     };
   };
 }
+
+const body = document.querySelector("body") as HTMLElement;
+
+const UnderBody = ({ children }: { children: React.ReactNode }) => {
+  return createPortal(children, body);
+};
 
 const BottomSheet = ({
   children,
@@ -104,51 +111,62 @@ const BottomSheet = ({
   }, [isOpen, rect]);
 
   return (
-    <div
-      className={clsx(
-        "BottomSheet",
-        isOpen ? "BottomSheet--open" : "BottomSheet--closed",
-        modalOnDesktop && isDesktop && "BottomSheet--modalOnDesktop",
-        classNames.bottomSheet
-      )}
-      style={styles.bottomSheet}
-    >
-      <Backdrop
-        onClick={close}
-        className={classNames.backdrop}
-        style={styles.backdrop}
-      />
-      <Draggable
-        axis="y"
-        bounds={{
-          top: 0,
-          ...(isDesktop && modalOnDesktop && { bottom: 0 }),
-        }}
-        position={position}
-        defaultClassName={clsx("BottomSheet__draggable", classNames.draggable)}
-        onStop={handleStopDragging}
-        onDrag={onDragging}
-        nodeRef={ref}
+    <UnderBody>
+      <div
+        className={clsx(
+          "BottomSheet",
+          isOpen ? "BottomSheet--open" : "BottomSheet--closed",
+          modalOnDesktop && isDesktop && "BottomSheet--modalOnDesktop",
+          classNames.bottomSheet
+        )}
+        style={styles.bottomSheet}
       >
-        <div
-          ref={ref}
-          className={clsx("BottomSheet__window-wrap", classNames.window?.wrap)}
-          style={styles.window?.wrap}
-        >
-          {!modalOnDesktop && !isDesktop && (
-            <DragIndicator
-              className={classNames?.dragIndicator}
-              style={styles.dragIndicator}
-            />
+        <Backdrop
+          onClick={close}
+          className={classNames.backdrop}
+          style={styles.backdrop}
+        />
+        <Draggable
+          axis="y"
+          bounds={{
+            top: 0,
+            ...(isDesktop && modalOnDesktop && { bottom: 0 }),
+          }}
+          position={position}
+          defaultClassName={clsx(
+            "BottomSheet__draggable",
+            classNames.draggable
           )}
+          onStop={handleStopDragging}
+          onDrag={onDragging}
+          nodeRef={ref}
+        >
           <div
-            className={clsx("BottomSheet__window", classNames.window?.content)}
+            ref={ref}
+            className={clsx(
+              "BottomSheet__window-wrap",
+              classNames.window?.wrap
+            )}
+            style={styles.window?.wrap}
           >
-            {children}
+            {!modalOnDesktop && !isDesktop && (
+              <DragIndicator
+                className={classNames?.dragIndicator}
+                style={styles.dragIndicator}
+              />
+            )}
+            <div
+              className={clsx(
+                "BottomSheet__window",
+                classNames.window?.content
+              )}
+            >
+              {children}
+            </div>
           </div>
-        </div>
-      </Draggable>
-    </div>
+        </Draggable>
+      </div>
+    </UnderBody>
   );
 };
 
