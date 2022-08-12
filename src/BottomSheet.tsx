@@ -17,6 +17,7 @@ interface BottomSheetProps {
   isOpen: boolean;
   modalOnDesktop?: boolean;
   desktopBreakpoint?: number;
+  disabled?: boolean;
   classNames?: {
     bottomSheet?: string;
     backdrop?: string;
@@ -58,6 +59,7 @@ const BottomSheet = ({
   modalOnDesktop = false,
   desktopBreakpoint = 1024,
   styles = {},
+  disabled = false,
   classNames = {
     bottomSheet: "",
     backdrop: "",
@@ -139,6 +141,7 @@ const BottomSheet = ({
           )}
           onStop={handleStopDragging}
           onDrag={onDragging}
+          disabled={disabled}
           nodeRef={ref}
         >
           <div
