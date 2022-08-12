@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.11...v1.8.0) (2022-08-12)
+
+
+### Features
+
+* **APP:** render bottom sheet under the document body ([abdcd6f](https://github.com/azabraao/react-draggable-bottom-sheet/commit/abdcd6f44abc3be6c92d08f63f90df3c6f0a4ae3))
+
 ## [1.7.11](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.10...v1.7.11) (2022-08-12)
 
 
