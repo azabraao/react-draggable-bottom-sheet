@@ -1,3 +1,10 @@
+## [1.7.10](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.9...v1.7.10) (2022-08-12)
+
+
+### Bug Fixes
+
+* **style:** bottom sheet getting focus when closed ([2c65053](https://github.com/azabraao/react-draggable-bottom-sheet/commit/2c65053b97c12f833a852389430830d0b81ade86))
+
 ## [1.7.9](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.8...v1.7.9) (2022-08-08)
 
 
