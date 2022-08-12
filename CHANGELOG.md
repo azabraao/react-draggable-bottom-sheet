@@ -1,3 +1,10 @@
+## [1.7.11](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.10...v1.7.11) (2022-08-12)
+
+
+### Bug Fixes
+
+* **style:** use specificity to win over pointer-events all ([13ae05b](https://github.com/azabraao/react-draggable-bottom-sheet/commit/13ae05b67519ee5941446f237f06e4b825bf2609))
+
 ## [1.7.10](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.9...v1.7.10) (2022-08-12)
 
 
