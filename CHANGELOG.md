@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.8.0...v1.9.0) (2022-08-12)
+
+
+### Features
+
+* allow to disable drag ([946ed57](https://github.com/azabraao/react-draggable-bottom-sheet/commit/946ed5725672e59fbe5272eb34e85360f7a3a5de))
+
 # [1.8.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.7.11...v1.8.0) (2022-08-12)
 
 
