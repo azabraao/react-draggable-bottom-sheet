@@ -35,6 +35,7 @@
 }
 
 .BottomSheet--closed,
+.BottomSheet--closed.BottomSheet--modalOnDesktop .BottomSheet__window,
 .BottomSheet--closed * {
   pointer-events: none;
 }
