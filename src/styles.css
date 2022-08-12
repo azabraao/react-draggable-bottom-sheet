@@ -31,8 +31,12 @@
 
 .BottomSheet--closed {
   transition-delay: 300ms;
-  pointer-events: none;
   opacity: 0;
+}
+
+.BottomSheet--closed,
+.BottomSheet--closed * {
+  pointer-events: none;
 }
 
 .BottomSheet__backdrop {
