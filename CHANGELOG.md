@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.9.0...v1.10.0) (2022-08-15)
+
+
+### Features
+
+* add onDrag function prop ([f130e6a](https://github.com/azabraao/react-draggable-bottom-sheet/commit/f130e6a9db9fee5dda88b9d7226fcff8591a1b6a))
+
 # [1.9.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.8.0...v1.9.0) (2022-08-12)
 
 
