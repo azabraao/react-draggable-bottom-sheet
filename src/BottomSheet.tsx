@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
-import Draggable from "@azabraao/react-draggable";
+import Draggable, { DraggableEventHandler } from "@azabraao/react-draggable";
 import clsx from "clsx";
 import { useCallbackRef } from "use-callback-ref";
 
@@ -18,6 +18,7 @@ interface BottomSheetProps {
   modalOnDesktop?: boolean;
   desktopBreakpoint?: number;
   disabled?: boolean;
+  onDrag?: DraggableEventHandler;
   classNames?: {
     bottomSheet?: string;
     backdrop?: string;
@@ -56,6 +57,7 @@ const BottomSheet = ({
   children,
   isOpen,
   close,
+  onDrag = () => {},
   modalOnDesktop = false,
   desktopBreakpoint = 1024,
   styles = {},
@@ -85,11 +87,15 @@ const BottomSheet = ({
     else unlockBodyScroll();
   }, [isOpen]);
 
-  const onDragging = useCallback(() => {
-    if (ref?.current) {
-      ref.current.style.transition = "none";
-    }
-  }, [ref]);
+  const onDragging = useCallback<DraggableEventHandler>(
+    (event, data) => {
+      onDrag(event, data);
+      if (ref?.current) {
+        ref.current.style.transition = "none";
+      }
+    },
+    [ref]
+  );
 
   const handleStopDragging = useCallback(
     (_: any, { y }: { y: number }) => {
