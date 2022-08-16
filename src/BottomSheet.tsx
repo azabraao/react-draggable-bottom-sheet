@@ -19,6 +19,7 @@ interface BottomSheetProps {
   desktopBreakpoint?: number;
   disabled?: boolean;
   onDrag?: DraggableEventHandler;
+  onMouseDown?: (e: MouseEvent) => void;
   classNames?: {
     bottomSheet?: string;
     backdrop?: string;
@@ -58,6 +59,7 @@ const BottomSheet = ({
   isOpen,
   close,
   onDrag = () => {},
+  onMouseDown = () => {},
   modalOnDesktop = false,
   desktopBreakpoint = 1024,
   styles = {},
@@ -147,6 +149,7 @@ const BottomSheet = ({
           )}
           onStop={handleStopDragging}
           onDrag={onDragging}
+          onMouseDown={onMouseDown}
           disabled={disabled}
           nodeRef={ref}
         >
