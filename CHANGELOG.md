@@ -1,3 +1,11 @@
+# [1.11.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.10.0...v1.11.0) (2022-08-16)
+
+
+### Features
+
+* add onMouseDown prop ([775b7a3](https://github.com/azabraao/react-draggable-bottom-sheet/commit/775b7a37604652e5b23c8d9603931c7a0ccc243c))
+* add onStart prop ([b8f89c9](https://github.com/azabraao/react-draggable-bottom-sheet/commit/b8f89c9511c712b10c60c1d013a9956198a2612a))
+
 # [1.10.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.9.0...v1.10.0) (2022-08-15)
 
 
