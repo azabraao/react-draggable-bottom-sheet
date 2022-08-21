@@ -175,6 +175,7 @@ const BottomSheet = ({
                 "BottomSheet__window",
                 classNames.window?.content
               )}
+              style={styles.window?.content}
             >
               {children}
             </div>
