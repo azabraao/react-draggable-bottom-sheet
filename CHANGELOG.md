@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.12.0...v1.13.0) (2022-08-22)
+
+
+### Features
+
+* add onBackdropClick prop ([c796f94](https://github.com/azabraao/react-draggable-bottom-sheet/commit/c796f94fb457c2c220d86c9c9ecea95c69dae12d))
+
 # [1.12.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.11.0...v1.12.0) (2022-08-21)
 
 
