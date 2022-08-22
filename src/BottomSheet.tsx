@@ -1,4 +1,11 @@
-import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
+import React, {
+  memo,
+  MouseEventHandler,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { createPortal } from "react-dom";
 import Draggable, { DraggableEventHandler } from "@azabraao/react-draggable";
 import clsx from "clsx";
@@ -21,6 +28,7 @@ interface BottomSheetProps {
   onDrag?: DraggableEventHandler;
   onMouseDown?: (e: MouseEvent) => void;
   onStart?: DraggableEventHandler;
+  onBackdropClick?: MouseEventHandler;
   classNames?: {
     bottomSheet?: string;
     backdrop?: string;
@@ -59,6 +67,7 @@ const BottomSheet = ({
   children,
   isOpen,
   close,
+  onBackdropClick,
   onDrag = () => {},
   onStart = () => {},
   onMouseDown = () => {},
@@ -134,7 +143,10 @@ const BottomSheet = ({
         style={styles.bottomSheet}
       >
         <Backdrop
-          onClick={close}
+          onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            if (onBackdropClick) onBackdropClick(event);
+            close();
+          }}
           className={classNames.backdrop}
           style={styles.backdrop}
         />
