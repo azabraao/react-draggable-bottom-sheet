@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.13.1...v1.13.2) (2022-10-28)
+
+
+### Bug Fixes
+
+* **build:** put some `dependencies ` as `peerDependencies` ([28453b1](https://github.com/azabraao/react-draggable-bottom-sheet/commit/28453b11f76d3b8b5e24d5b33262cc9e4a596d47))
+
 ## [1.13.1](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.13.0...v1.13.1) (2022-10-28)
 
 
