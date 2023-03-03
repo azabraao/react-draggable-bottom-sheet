@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.13.2...v1.13.3) (2023-03-03)
+
+
+### Bug Fixes
+
+* remove specificity from backdrop when active ([216bd18](https://github.com/azabraao/react-draggable-bottom-sheet/commit/216bd18ec6f678751916e144306d762bd6b724d8))
+
 ## [1.13.2](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.13.1...v1.13.2) (2022-10-28)
 
 
