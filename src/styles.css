@@ -53,7 +53,7 @@
   opacity: 0;
 }
 
-.BottomSheet--open .BottomSheet__backdrop {
+.BottomSheet__backdrop--active {
   pointer-events: auto;
   opacity: 1;
   background-color: #000;

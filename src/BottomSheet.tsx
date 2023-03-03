@@ -149,6 +149,7 @@ const BottomSheet = ({
           }}
           className={classNames.backdrop}
           style={styles.backdrop}
+          isActive={isOpen}
         />
         <Draggable
           axis="y"
