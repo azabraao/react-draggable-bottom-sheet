@@ -168,6 +168,7 @@ const BottomSheet = ({
           onStart={onStart}
           disabled={disabled}
           nodeRef={ref}
+          cancel="[data-no-drag]"
         >
           <div
             ref={ref}

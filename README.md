@@ -27,3 +27,12 @@ const NiceComponent = () => {
   );
 };
 ```
+
+In case you want some places to not drag the bottom sheet, just put the `data-no-drag`` data attribute on the tag.
+
+```javascript
+<BottomSheet isOpen={isOpen} close={close}>
+  <div data-no-drag>don't drag the bottom sheet</div>
+  <div>here you can drag it</div>
+</BottomSheet>
+```
