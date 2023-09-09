@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.13.3...v1.14.0) (2023-09-09)
+
+
+### Features
+
+* add `cancel="[data-no-drag]"`  for canceling drag if necessary. ([3bd5bb4](https://github.com/azabraao/react-draggable-bottom-sheet/commit/3bd5bb401b020ffabcd94ea31f5eec09878cb9f8))
+
 ## [1.13.3](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.13.2...v1.13.3) (2023-03-03)
 
 
