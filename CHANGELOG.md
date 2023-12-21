@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.14.0...v1.15.0) (2023-12-21)
+
+
+### Features
+
+* add support for multiple bottom sheets. ([f1bf174](https://github.com/azabraao/react-draggable-bottom-sheet/commit/f1bf17489475af670fa08ae4f77209352a502de2))
+
 # [1.14.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.13.3...v1.14.0) (2023-09-09)
 
 
