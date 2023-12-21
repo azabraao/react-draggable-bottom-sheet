@@ -97,7 +97,11 @@ const BottomSheet = ({
 
   useEffect(() => {
     if (isOpen) lockBodyScroll();
-    else unlockBodyScroll();
+    else {
+      const isAnyOtherBottomSheetOpen =
+        document.querySelectorAll(".BottomSheet--open")?.length;
+      if (!isAnyOtherBottomSheetOpen) unlockBodyScroll();
+    }
   }, [isOpen]);
 
   const onDragging = useCallback<DraggableEventHandler>(
