@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.15.0...v1.16.0) (2024-12-02)
+
+
+### Features
+
+* add scrollableElement prop ([c808740](https://github.com/azabraao/react-draggable-bottom-sheet/commit/c808740f736ab5344b6ccf84ac5f10630519051a))
+
 # [1.15.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.14.0...v1.15.0) (2023-12-21)
 
 
