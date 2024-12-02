@@ -1,1 +1,1 @@
-export { lockBodyScroll, unlockBodyScroll } from "./dom";
+export { lockWebsiteScroll, unlockWebsiteScroll } from "./dom";

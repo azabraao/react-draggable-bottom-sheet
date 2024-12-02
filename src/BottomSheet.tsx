@@ -11,7 +11,7 @@ import Draggable, { DraggableEventHandler } from "@azabraao/react-draggable";
 import clsx from "clsx";
 import { useCallbackRef } from "use-callback-ref";
 
-import { lockBodyScroll, unlockBodyScroll } from "./utils";
+import { lockWebsiteScroll, unlockWebsiteScroll } from "./utils";
 import Backdrop from "./Backdrop";
 import DragIndicator from "./DragIndicator";
 import useIsDesktop from "./hooks/useIsDesktop";
@@ -29,6 +29,7 @@ interface BottomSheetProps {
   onMouseDown?: (e: MouseEvent) => void;
   onStart?: DraggableEventHandler;
   onBackdropClick?: MouseEventHandler;
+  scrollableElement?: HTMLElement;
   classNames?: {
     bottomSheet?: string;
     backdrop?: string;
@@ -75,6 +76,7 @@ const BottomSheet = ({
   desktopBreakpoint = 1024,
   styles = {},
   disabled = false,
+  scrollableElement,
   classNames = {
     bottomSheet: "",
     backdrop: "",
@@ -96,11 +98,11 @@ const BottomSheet = ({
   });
 
   useEffect(() => {
-    if (isOpen) lockBodyScroll();
+    if (isOpen) lockWebsiteScroll(scrollableElement);
     else {
       const isAnyOtherBottomSheetOpen =
         document.querySelectorAll(".BottomSheet--open")?.length;
-      if (!isAnyOtherBottomSheetOpen) unlockBodyScroll();
+      if (!isAnyOtherBottomSheetOpen) unlockWebsiteScroll(scrollableElement);
     }
   }, [isOpen]);
 

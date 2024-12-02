@@ -1,11 +1,15 @@
-export const lockBodyScroll = () => {
+export const lockWebsiteScroll = (scrollableElement?: HTMLElement) => {
   const scrollingElement =
-    (document.scrollingElement as HTMLElement) || document.body;
+    scrollableElement ||
+    (document.scrollingElement as HTMLElement) ||
+    document.body;
   scrollingElement.style.overflow = "hidden";
 };
 
-export const unlockBodyScroll = () => {
+export const unlockWebsiteScroll = (scrollableElement?: HTMLElement) => {
   const scrollingElement =
-    (document.scrollingElement as HTMLElement) || document.body;
+    scrollableElement ||
+    (document.scrollingElement as HTMLElement) ||
+    document.body;
   scrollingElement.style.overflow = "auto";
 };
