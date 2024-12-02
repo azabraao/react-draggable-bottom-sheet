@@ -36,3 +36,43 @@ In case you want some places to not drag the bottom sheet, just put the `data-no
   <div>here you can drag it</div>
 </BottomSheet>
 ```
+
+## Lib Development
+
+To set up the development environment, follow these steps:
+
+1. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm start
+   ```
+
+### Testing
+
+To test the library in a React project, follow these steps:
+
+1. Link the library in the repository root:
+
+   ```bash
+   npm link
+   ```
+
+2. Link the library in your React project:
+
+   ```bash
+   npm link react-draggable-bottom-sheet
+   ```
+
+3. Now you can import and use the library in your React project for testing purposes.
+
+Alternatively, you can also put the path straight to the root folder of the library if you prefer not to link:
+
+```javascript
+//in your app's package.json
+"react-draggable-bottom-sheet": <path-to-lib>
+```
