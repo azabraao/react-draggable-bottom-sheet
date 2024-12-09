@@ -13,12 +13,13 @@ export default {
       exports: "named",
       sourcemap: true,
       strict: false,
-      css: true,
     },
   ],
   plugins: [
     postcss({
-      inject: true,
+      extract: true,
+      inject: false,
+      minimize: true,
     }),
     typescript(),
   ],

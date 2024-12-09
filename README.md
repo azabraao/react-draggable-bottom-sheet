@@ -10,6 +10,14 @@ A React component with the bottom sheet experience we have for native mobile app
 npm install react-draggable-bottom-sheet
 ```
 
+## Styles
+
+The component requires its CSS styles to be imported separately. Add the following import to your application:
+
+```javascript
+import "react-draggable-bottom-sheet/dist/styles.css";
+```
+
 ## Usage
 
 ```javascript
