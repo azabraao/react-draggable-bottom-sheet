@@ -1,3 +1,15 @@
+# [1.17.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.16.0...v1.17.0) (2024-12-09)
+
+
+### Features
+
+* Chose extract CSS for manual import ([aa00207](https://github.com/azabraao/react-draggable-bottom-sheet/commit/aa002079624b8dfeff1ce41ed0b149e8885ecb60))
+
+
+### BREAKING CHANGES
+
+* With this commit, now the styles must be either imported or created using your own styles.
+
 # [1.16.0](https://github.com/azabraao/react-draggable-bottom-sheet/compare/v1.15.0...v1.16.0) (2024-12-02)
 
 
